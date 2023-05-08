@@ -1,9 +1,9 @@
-Class No:
-    def __init__(self, valor):
+class No:
+    def __init__(self,valor):
         self.valor = valor
         self.proximo = None
 
-class pilha:
+class Pilha:
     def __init__(self):
         self.topo = None
         self.tamanho = 0
@@ -15,7 +15,7 @@ class pilha:
         return self.tamanho == 0
 
     def inserir(self, valor):
-        No = no(valor)
+        No = No(valor)
         No.proximo = self.topo
         self.topo = No
         self.tamanho += 1
@@ -32,7 +32,6 @@ class pilha:
         if self.size == 0:
             raise Exception("A pilha está vazia")
         return self.top.valor
-#quest 3
 
 def calcular(exp):
     p = pilha()
@@ -42,16 +41,16 @@ def calcular(exp):
         else:
             num2 = p.remover()
             num1 = p.remover()
-        if caractere == '+':
-            resultado = int(nume1) + int(num2)
-            p.inserir(str(resultado))
-        elif caractere == '-':
-            resultado = int(num1) - int(num2)
-            p.insert(str(resultado))
-        elif caractere == '*':
-            resultado = int(num1) * int(num2)
-            p.insert(str(resultado))
-        elif caractere == '/':
-            resultado = int(num1) / int(num2)
-            p.insert(str(resultado))
+            if caractere == '+':
+                resultado = int(nume1) + int(num2)
+                p.inserir(str(resultado))
+            elif caractere == '-':
+                resultado = int(num1) - int(num2)
+                p.insert(str(resultado))
+            elif caractere == '*':
+                resultado = int(num1) * int(num2)
+                p.insert(str(resultado))
+            elif caractere == '/':
+                resultado = int(num1) / int(num2)
+                p.insert(str(resultado))
     return p.remover()
