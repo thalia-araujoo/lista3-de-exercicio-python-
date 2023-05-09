@@ -17,7 +17,7 @@ class Pilha:
     def inserir(self, valor):
         no = No(valor)
         no.proximo = self._topo
-        sef._toplo = no
+        self._toplo = no
         self.tamanho += 1
    
     def remover(self):
